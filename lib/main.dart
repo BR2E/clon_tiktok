@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'UI/column_navigator.dart';
+import 'UI/navigation_bar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,13 +13,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(useMaterial3: true),
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(
-        body: const SafeArea(
+      home: const Scaffold(
+        body: SafeArea(
           child: Center(
             child: Fondo(),
           ),
         ),
-        bottomNavigationBar: _bottomNav(),
+        bottomNavigationBar: BottonNav(),
       ),
     );
   }
@@ -69,46 +71,7 @@ class Fondo extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: Colors.white)),
-                    child: ClipOval(
-                        child: Image.network(
-                      'https://avatars.githubusercontent.com/u/120425666?v=4',
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.contain,
-                    )),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 20, top: 20, right: 5),
-                    child: Icon(Icons.favorite, size: 40),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 20, right: 5),
-                    child: Icon(
-                      Icons.comment_outlined,
-                      size: 35,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 20, right: 5),
-                    child: Icon(
-                      Icons.ios_share,
-                      size: 35,
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 20, right: 5),
-                    child: Icon(
-                      Icons.save_alt,
-                      size: 35,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const ColumnNavigator(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -183,45 +146,4 @@ class Fondo extends StatelessWidget {
       ],
     );
   }
-}
-
-Widget _bottomNav() {
-  return BottomNavigationBar(
-    backgroundColor: Colors.black,
-    selectedItemColor: Colors.white,
-    unselectedItemColor: Colors.white60,
-    type: BottomNavigationBarType.fixed,
-    items: <BottomNavigationBarItem>[
-      const BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.only(bottom: 0),
-            child: Icon(Icons.home, size: 25),
-          ),
-          label: "Inicio"),
-      const BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.only(bottom: 0),
-            child: Icon(Icons.people_alt, size: 25),
-          ),
-          label: "Amigos"),
-      BottomNavigationBarItem(
-          icon: Padding(
-            padding: const EdgeInsets.only(bottom: 0),
-            child: Image.asset('assets/plus.png'),
-          ),
-          label: ""),
-      const BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.only(bottom: 0),
-            child: Icon(Icons.message_outlined, size: 25),
-          ),
-          label: "Bandeja de entrada"),
-      const BottomNavigationBarItem(
-          icon: Padding(
-            padding: EdgeInsets.only(bottom: 0),
-            child: Icon(Icons.account_circle_outlined, size: 25),
-          ),
-          label: "Cuenta")
-    ],
-  );
 }
