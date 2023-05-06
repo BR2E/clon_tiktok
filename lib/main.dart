@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'UI/column_navigator.dart';
-import 'UI/navigation_bar.dart';
+import 'UI/widgets/column_navigator.dart';
+import 'UI/widgets/navigation_bar.dart';
 
 void main() => runApp(const MyApp());
 

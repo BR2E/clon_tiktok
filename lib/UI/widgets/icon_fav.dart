@@ -30,6 +30,8 @@ class _IconFavState extends State<IconFav> {
   }
 }
 
+//Icono de guardar
+
 class IconGuardar extends StatefulWidget {
   const IconGuardar({super.key});
 
