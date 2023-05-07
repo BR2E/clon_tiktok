@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Widgets/column_navigator_icon.dart';
+import 'page_view.dart';
 
 class Inicio extends StatelessWidget {
   const Inicio({super.key});
@@ -8,40 +9,10 @@ class Inicio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Image.asset(
-          'assets/fondo.jpg',
-          fit: BoxFit.cover,
-          height: double.infinity,
-        ),
+        const PageScroll(),
         Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Siguiendo",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  const SizedBox(width: 20),
-                  Column(
-                    children: [
-                      const Text("Para ti", style: TextStyle(fontSize: 18)),
-                      const SizedBox(
-                        height: 2,
-                      ),
-                      Container(
-                        width: 45,
-                        height: 2,
-                        decoration: const BoxDecoration(color: Colors.white),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(

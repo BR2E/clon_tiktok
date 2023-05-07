@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../Pages/inicio.dart';
 import '../Pages/perfil.dart';
+import '../Pages/mensajes.dart';
 
 class BottonNav extends StatefulWidget {
   const BottonNav({super.key});
@@ -11,7 +12,7 @@ class BottonNav extends StatefulWidget {
 
 class _BottonNavState extends State<BottonNav> {
   int selectedIndex = 0;
-  final screens = [const Inicio(), const Perfil()];
+  final screens = [const Inicio(), const Mensajes(), const Perfil()];
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +31,14 @@ class _BottonNavState extends State<BottonNav> {
         },
         backgroundColor: Colors.black,
         type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.home, size: 25), label: "Inicio"),
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.people_alt, size: 25), label: "Amigos"),
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Image.asset('assets/plus.png'), label: ""),
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.message_outlined, size: 25),
+              icon: Icon(Icons.home, size: 20), label: "Inicio"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.message_outlined, size: 20),
               label: "Bandeja de entrada"),
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_outlined, size: 25),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined, size: 20),
               label: "Cuenta")
         ],
       ),
